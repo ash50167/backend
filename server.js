@@ -47,5 +47,6 @@ app.post('/api/quote', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
+    res.send("server is running");
     console.log(`Server running at http://localhost:${port}`);
 });
