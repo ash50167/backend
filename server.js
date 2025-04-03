@@ -10,6 +10,13 @@ const port = 5000;
 app.use(bodyParser.json());
 app.use(cors());
 
+const server = (req, res) => {
+    res.send("Server is running...");
+};
+
+// Routes
+app.get("/", server);
+
 // Quote Calculation Route
 app.post('/api/quote', (req, res) => {
     const { age, vehicleType, insuranceType } = req.body;
