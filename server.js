@@ -8,7 +8,11 @@ const port = 5000;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+    origin: '*',  // Change '*' to your frontend URL for security
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 
 const server = (req, res) => {
     res.send("Server is running...");
